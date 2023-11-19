@@ -1,0 +1,107 @@
+.cabecalho{
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+
+.container__imagem{
+    padding: 1em;
+}
+
+
+.cabecalho__menu-hamburguer{
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.menu{
+    background-color: var(--azul-degrade);
+}
+
+.lista-menu{
+    position: absolute;
+    top: 100%;
+    display: none;
+    width: min(90%, 60vw);
+    z-index: 10;
+}
+
+.lista-menu.active{
+    display: block;
+}
+
+.lista-menu__titulo, .lista-menu__item{
+    padding: 1em;
+    background-color: var(--branco);
+    font-family: var(--font-menu);
+    line-height: 24px;
+
+}
+
+
+.lista-menu__titulo{
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+
+.lista-menu__links{
+    text-decoration: none;
+    text-transform: uppercase;
+    background: var(--azul-degrade, linear-gradient(98deg, #002F52 35.49%, #326589 165.37%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.alura__logo{
+    display: none;
+
+}
+
+.opcoes{
+    display: none;
+}
+
+
+.container__texto{display: none;}
+
+@media screen and (min-width: 1024px) {
+
+    .alura__logo{display: block; font-size: 30px; font-family: var(--font-secundaria);}
+    .alura__logo__style{font-weight: 700;}
+    .opcoes{display: flex; align-items: center;}
+    .opcoes__item{padding: 0 1em; text-transform: uppercase;}
+    .opcoes__link{ text-decoration: none; color: var(--preto)}
+    .container__imagem-transparente{display: none;}
+    .cabecalho__menu-hamburguer{display: none;}
+    .lista-menu-cat{width: auto;}
+    .opcoes__cat.active{background: var(--azul-degrade); padding: 2em 1em;}
+    .opcoes__cat.active a{color: white;}
+    .lista-menu__item:hover{background: var(--azul-degrade);}
+    .lista-menu__item:hover a{-webkit-text-fill-color: var(--branco);}
+    
+}
+
+
+@media screen and (min-width: 1728px){
+
+    .container__texto{display: block;}
+    .container__link{display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--preto);}
+    .cabecalho{padding: 0 2em;}
+    .opcoes{margin-right: auto;}
+
+}
